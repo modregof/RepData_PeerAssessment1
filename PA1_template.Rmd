@@ -69,7 +69,7 @@ The strategy consist in filling all the missing values using the mean for that i
 activity.data.noNA <- activity.data
 for (i in 1:nrow(activity.data.noNA)) {
       if (is.na(activity.data.noNA[i, 1]))
-          {activity.data.noNA[i, 1] <- activity.data2[activity.data2$interval ==activity.data.noNA[i, 3], 2] }
+          {activity.data.noNA[i, 1] <- round(activity.data2[activity.data2$interval ==activity.data.noNA[i, 3], 2], digits = 0) }
 }
 ```
 

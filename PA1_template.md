@@ -90,7 +90,7 @@ The strategy consist in filling all the missing values using the mean for that i
 activity.data.noNA <- activity.data
 for (i in 1:nrow(activity.data.noNA)) {
       if (is.na(activity.data.noNA[i, 1]))
-          {activity.data.noNA[i, 1] <- activity.data2[activity.data2$interval ==activity.data.noNA[i, 3], 2] }
+          {activity.data.noNA[i, 1] <- round(activity.data2[activity.data2$interval ==activity.data.noNA[i, 3], 2], digits = 0) }
 }
 ```
 
@@ -114,8 +114,8 @@ Mean2 <- format(mean(activity.data3$steps, na.rm = TRUE), digits = 5, nsmall =2)
 Median2 <- format(median(activity.data3$steps, na.rm = TRUE), digits = 5, nsmall =2)
 ```
 
-Mean2: 10766.19 
-Median2: 10766.19
+Mean2: 10765.64 
+Median2: 10762.00
 
 Do these values differ from the estimates from the first part of the assignment? 
 These values are slightly higher than the orinal indicators
